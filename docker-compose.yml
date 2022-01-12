@@ -1,10 +1,8 @@
 version: "3"
 services:
-  node-app:
-    build:
-      context: . #docker file location
-      args:
-        NODE_ENV: production
+  diet-manager:
+    build: .
+    ports:
+      - "8080:8080"
     environment:
-      - NODE_ENV=production
-    command: node index.js
+      - PORT=8080

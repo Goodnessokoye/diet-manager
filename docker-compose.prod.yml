@@ -1,0 +1,10 @@
+version: "3"
+services:
+  diet-manager:
+    build:
+      context: . #docker file location
+      args:
+        NODE_ENV: production
+    environment:
+      - NODE_ENV=production
+    command: node server.js
