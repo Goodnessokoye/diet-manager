@@ -1,4 +1,3 @@
-# backend
 
-Sict repo for backend. 
+Diet Manager. 
 
