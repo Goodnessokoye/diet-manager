@@ -1,19 +1,24 @@
-const mongoose = require("mongoose")
-const { schemaForMeal } = require("./schemas/userSchema");
+const mongoose = require('mongoose');
+const Ingredient = require('./ingredient');
+const { schemaForMeal } = require('./schemas/userSchema');
 
 const mealSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Email is required"],
+      required: [true, 'Name is required'],
       lowercase: true,
       unique: true,
     },
-    
+    ingredientId: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Ingredient',
+      },
+    ],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
-
 
 mealSchema.statics.joiValidateLogin = async function (obj) {
   const value = await schemaForMeal.validateAsync(obj);
@@ -21,5 +26,4 @@ mealSchema.statics.joiValidateLogin = async function (obj) {
   return value;
 };
 
-
-module.exports = mongoose.model("Meal", mealSchema);
+module.exports = mongoose.model('Meal', mealSchema);

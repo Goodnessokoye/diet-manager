@@ -3,7 +3,7 @@ require("dotenv").config();
 const config = {};
 const JWT_KEY = process.env.JWT_KEY || "randomtokenkey";
 const MONGO_URI =
-  "mongodb+srv://Goodness:34452027@cluster0.wkdlm.mongodb.net/diet-manager?retryWrites=true&w=majority";
+  "mongodb+srv://username:password@cluster0.wkdlm.mongodb.net/diet-manager?retryWrites=true&w=majority";
 const env = process.env.NODE_ENV || "development";
 
 config.development = {

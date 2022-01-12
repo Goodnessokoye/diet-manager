@@ -1,21 +1,21 @@
-const mongoose = require("mongoose");
-const { schemaForIngredient } = require("./schemas/ingredientSchema");
+const mongoose = require('mongoose');
+const { schemaForIngredient } = require('./schemas/ingredientSchema');
 
 const ingredientSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Email is required"],
+      required: [true, 'Name is required'],
       lowercase: true,
       unique: true,
     },
 
     numberOfCalories: {
-      type: String,
-      required: [true, "Number of Calories is required"],
+      type: Number,
+      required: [true, 'Number of Calories is required'],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 ingredientSchema.statics.joiValidateLogin = async function (obj) {
@@ -24,4 +24,4 @@ ingredientSchema.statics.joiValidateLogin = async function (obj) {
   return value;
 };
 
-module.exports = mongoose.model("Ingredient", ingredientSchema);
+module.exports = mongoose.model('Ingredient', ingredientSchema);
