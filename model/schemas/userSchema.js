@@ -7,7 +7,7 @@ const schemaForLogin = Joi.object({
     .alphanum()
     .min(8)
     .max(30)
-    .regex(/[a-zA-Z0-9]{3,30}/)
+    // .regex(/[a-zA-Z0-9]{3,30}/)
     .required(),
 });
 
@@ -16,7 +16,7 @@ const schemaForSignup = Joi.object({
     .alphanum()
     .min(8)
     .max(30)
-    .regex(/[a-zA-Z0-9]{3,30}/)
+    // .regex(/[a-zA-Z0-9]{3,30}/)
     .required(),
   email: Joi.string().email().required(),
 });

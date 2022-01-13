@@ -13,8 +13,10 @@ const app = express();
 //set security headers
 app.use(helmet());
 
-//enable cors
+// enable cors
 app.use(cors());
+
+// app.use()
 
 app.use(express.json());
 

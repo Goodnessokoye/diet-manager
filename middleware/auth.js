@@ -52,16 +52,7 @@ async function authenticate(req, res, next) {
   }
 }
 
-function authorize(req, res, next) {
-  if (!req.user.isAdmin === 'true') {
-    return res.status(403).send({
-      message: 'Forbidden. Access Denied',
-	  success: false,
-    });
-  }
-  next();
-}
+
 module.exports = {
-  authorize,
   authenticate,
 };

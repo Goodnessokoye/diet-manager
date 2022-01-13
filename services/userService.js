@@ -37,11 +37,4 @@ exports.jwtGenerate = (user) => {
   return token;
 };
 
-//jwt generation for passsword
-/*
-exports.passwordJWT = (email) => {
-  const token = jwt.sign({ email }, config.JWT_KEY, { expiresIn: "1d" });
-  return token;
-};
-*/
 

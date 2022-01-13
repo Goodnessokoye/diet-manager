@@ -43,14 +43,16 @@ function MealController() {
 
     // return res.send(IngredientIds);
 
-    if (!('kCalories' in req.body)) {
+    if (!('kCalories' in req.query)) {
       return res.status(400).send({
         success: false,
         message: 'Number of calories was not provided',
       });
     }
 
-    const meals = await MealService.findOneRandomMeal(Number(req.body.kCalories));
+    const kCalories = Number(req.query.kCalories);
+
+    const meals = await MealService.findOneRandomMeal(kCalories);
 
     return res.send(meals);
   };

@@ -6,6 +6,7 @@ exports.findById = async (_id) => {
   return ingredient;
 };
 
+// Creating ingredient
 exports.addIngredient = async function (Body) {
   const ingredient = await Ingredient.findOne({ name: Body.name });
   if (ingredient) {
@@ -29,7 +30,7 @@ exports.addIngredient = async function (Body) {
   };
 };
 
-// getAllMeals
+// getAllIngredient
 exports.allIngredient = async function () {
   const ingredients = await Ingredient.find().sort({ createdAt: -1 });
   if (!ingredients) {
@@ -45,6 +46,7 @@ exports.allIngredient = async function () {
   };
 };
 
+//getting (K) Calories in Ingredient
 exports.getKcalories = async (kCalories) => {
   const kCaloriesIngredient = await Ingredient
     .find({

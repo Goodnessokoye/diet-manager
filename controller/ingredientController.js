@@ -7,7 +7,7 @@ function IngredientController() {
       return res.status(200).send({
         data: result.data,
         message: result.message,
-        error: null,
+        success: true
       });
   };
 
@@ -17,7 +17,7 @@ function IngredientController() {
       return res.status(result.status).send({
         data: result.data,
         message: result.message,
-        error: null,
+        success: true
       });
   };
 }
